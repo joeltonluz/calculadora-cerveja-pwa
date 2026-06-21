@@ -194,7 +194,7 @@ export default function HomeScreen({
                       </span>
                       {!isCheapest && sortedBeers.length > 1 && (
                         <span className="diff-badge">
-                          +{diffPercent.toFixed(0)}% mais cara
+                          {diffPercent.toFixed(0)}% + cara
                         </span>
                       )}
                     </div>
@@ -536,6 +536,45 @@ export default function HomeScreen({
         .btn-delete:hover {
           color: var(--warning);
           background-color: var(--warning-light);
+        }
+
+        @media (max-width: 480px) {
+          .beer-item {
+            flex-direction: column;
+            align-items: stretch;
+            gap: 10px;
+            padding: 12px 14px;
+          }
+
+          .beer-item-details {
+            width: 100%;
+          }
+
+          .beer-title-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            gap: 8px;
+          }
+
+          .beer-numbers {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            margin-top: 4px;
+            gap: 8px;
+            flex-wrap: wrap;
+          }
+
+          .beer-item-price-col {
+            width: 100%;
+            justify-content: space-between;
+            border-top: 1px dashed var(--border);
+            padding-top: 8px;
+            margin-top: 2px;
+          }
         }
       `}</style>
     </div>
