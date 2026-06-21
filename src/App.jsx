@@ -6,13 +6,13 @@ import DonationScreen from './components/DonationScreen';
 function App() {
   const [currentScreen, setCurrentScreen] = useState('splash');
   const [beers, setBeers] = useState(() => {
-    const saved = localStorage.getItem('cervacalc_beers');
+    const saved = localStorage.getItem('calculabreja_beers');
     return saved ? JSON.parse(saved) : [];
   });
   
   // Detect OS dark mode preference or load saved theme
   const [darkMode, setDarkMode] = useState(() => {
-    const savedTheme = localStorage.getItem('cervacalc_dark_mode');
+    const savedTheme = localStorage.getItem('calculabreja_dark_mode');
     if (savedTheme !== null) {
       return savedTheme === 'true';
     }
@@ -21,7 +21,7 @@ function App() {
 
   // Sync beers to localStorage
   useEffect(() => {
-    localStorage.setItem('cervacalc_beers', JSON.stringify(beers));
+    localStorage.setItem('calculabreja_beers', JSON.stringify(beers));
   }, [beers]);
 
   // Sync theme class with body element
@@ -32,7 +32,7 @@ function App() {
     } else {
       rootClassList.remove('dark-theme');
     }
-    localStorage.setItem('cervacalc_dark_mode', darkMode.toString());
+    localStorage.setItem('calculabreja_dark_mode', darkMode.toString());
   }, [darkMode]);
 
   const handleAddBeer = (newBeer) => {

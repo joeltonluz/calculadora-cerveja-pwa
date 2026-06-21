@@ -11,8 +11,8 @@ export default defineConfig({
       registerType: "autoUpdate",
       includeAssets: ["favicon.ico", "apple-touch-icon.png", "icon.svg"],
       manifest: {
-        name: "Calculadora de Cerveja PWA",
-        short_name: "CervaCalc",
+        name: "CalculaBreja - Calculadora de Cerveja",
+        short_name: "CalculaBreja",
         description:
           "Compare preços de cerveja e encontre a melhor opção por litro.",
         theme_color: "#d97706",

@@ -51,7 +51,7 @@ export default function HomeScreen({
       <header className="navbar glass-panel">
         <div className="nav-brand">
           <span className="beer-emoji">🍻</span>
-          <h1>CervaCalc</h1>
+          <h1>CalculaBreja</h1>
         </div>
         <div className="nav-actions">
           <button

@@ -4,7 +4,7 @@ import { ArrowLeft, Copy, Check, Heart, Beer } from 'lucide-react';
 
 export default function DonationScreen({ onBack }) {
   const [copied, setCopied] = useState(false);
-  const pixKey = 'doacao@cervacalc.com.br'; // Mock Pix key (developer's email)
+  const pixKey = 'doacao@calculabreja.com.br'; // Mock Pix key (developer's email)
 
   const handleCopy = () => {
     navigator.clipboard.writeText(pixKey);
@@ -29,7 +29,7 @@ export default function DonationScreen({ onBack }) {
 
         <h3>Pague uma rodada! 🍻</h3>
         <p className="motivation-text">
-          Se a <strong>CervaCalc</strong> te ajudou a economizar no churrasco ou no bar, que tal apoiar o desenvolvedor pagando uma rodada de cerveja?
+          Se a <strong>CalculaBreja</strong> te ajudou a economizar no churrasco ou no bar, que tal apoiar o desenvolvedor pagando uma rodada de cerveja?
         </p>
 
         <div className="qr-container">

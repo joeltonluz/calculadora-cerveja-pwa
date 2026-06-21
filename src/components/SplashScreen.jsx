@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 
 export default function SplashScreen({ onFinish }) {
   const [fadeOut, setFadeOut] = useState(false);
@@ -15,7 +15,7 @@ export default function SplashScreen({ onFinish }) {
   }, [onFinish]);
 
   return (
-    <div className={`splash-container ${fadeOut ? 'fade-out' : ''}`}>
+    <div className={`splash-container ${fadeOut ? "fade-out" : ""}`}>
       <div className="splash-content">
         <div className="beer-animation-container">
           <div className="beer-glass">
@@ -29,10 +29,12 @@ export default function SplashScreen({ onFinish }) {
             <span className="bubble b4"></span>
           </div>
         </div>
-        <h1 className="splash-title">CervaCalc</h1>
-        <p className="splash-subtitle">O seu comparador inteligente de cervejas 🍻</p>
+        <h1 className="splash-title">CalculaBreja</h1>
+        <p className="splash-subtitle">
+          O seu comparador de preço de cerveja 🍻
+        </p>
       </div>
-      
+
       <style>{`
         .splash-container {
           position: fixed;
