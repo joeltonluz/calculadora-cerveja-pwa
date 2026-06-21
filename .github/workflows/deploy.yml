@@ -1,0 +1,35 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main # Dispara a action sempre que houver push na main
+
+permissions:
+  contents: write # Permissão necessária para a Action criar/atualizar a branch gh-pages
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js ⚙️
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install Dependencies 🔧
+        run: npm ci # Instalação limpa e rápida voltada para servidores de CI
+
+      - name: Build Project 🏗️
+        run: npm run build
+
+      - name: Deploy to GitHub Pages 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: dist # Se você usa o Create React App tradicional, mude aqui para 'build'
+          branch: gh-pages # A branch onde os arquivos de produção serão salvos
