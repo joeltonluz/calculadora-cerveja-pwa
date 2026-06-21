@@ -1,4 +1,4 @@
-import { Heart, Moon, Plus, Sparkles, Sun, Trash2, Share2 } from "lucide-react";
+import { Heart, Moon, Plus, Share2, Sparkles, Sun, Trash2 } from "lucide-react";
 import { useMemo, useState } from "react";
 
 export default function HomeScreen({
@@ -21,13 +21,17 @@ export default function HomeScreen({
     const formattedItems = sortedBeers
       .map((beer, index) => {
         const icon = index === 0 ? "🥇" : "🍺";
-        return `${icon} *${beer.name}* (${beer.volume}ml)\n   De R$ ${beer.price.toFixed(2)} por *R$ ${beer.pricePerLiter.toFixed(2)}/L*`;
+        const diffPercent =
+          ((beer.pricePerLiter - sortedBeers[0].pricePerLiter) /
+            sortedBeers[0].pricePerLiter) *
+          100;
+        return `${icon} *${beer.name}* (${beer.volume}ml)  ${index === 0 ? "" : "| " + diffPercent.toFixed(2) + " % mais caro."}\n   Preço Unitário: R$ ${beer.price.toFixed(2)} | *R$ ${beer.pricePerLiter.toFixed(2)}/L*`;
       })
       .join("\n\n");
 
-    const shareText = `📊 *Minha Comparação de Cervejas no Calcula Breja!*
+    const shareText = `📊 *Comparação de Cervejas no Calcula Breja!*
 
-Aqui estão as melhores opções que encontrei agora, ordenadas da mais barata por litro:
+Abaixo as melhores opções que encontrei agora, ordenadas da mais barata por litro:
 
 ${formattedItems}
 
@@ -35,14 +39,16 @@ ${formattedItems}
 📱 Calcule você também no *Calcula Breja*:
 👉 https://joeltonluz.github.io/calcula-breja/
 
-💬 Participe do nosso grupo de Promoção de Cerveja no WhatsApp (Varginha):
+💬 Promoção de Cerveja no WhatsApp (Varginha):
 👉 https://chat.whatsapp.com/HzgGW1xdWByHnbGkHHKRDn?mode=gi_t`;
 
     if (navigator.share) {
-      navigator.share({
-        title: "CalculaBreja",
-        text: shareText,
-      }).catch((err) => console.log("Erro ao compartilhar:", err));
+      navigator
+        .share({
+          title: "CalculaBreja",
+          text: shareText,
+        })
+        .catch((err) => console.log("Erro ao compartilhar:", err));
     } else {
       navigator.clipboard.writeText(shareText);
       setShareCopied(true);
@@ -63,7 +69,7 @@ ${formattedItems}
     if (volNum > 0 && priceNum > 0) {
       onAddBeer({
         id: Date.now().toString(),
-        name: name.trim() || `Cerveja ${volNum}ml`,
+        name: name.trim() || `Cerveja`,
         volume: volNum,
         price: priceNum,
         pricePerLiter: priceNum / (volNum / 1000),
@@ -185,9 +191,13 @@ ${formattedItems}
             <div className="list-header-actions">
               <button className="btn-share" onClick={handleShare} type="button">
                 <Share2 size={16} />
-                <span>{shareCopied ? "Copiado!" : "Compartilhar"}</span>
+                <span></span>
               </button>
-              <button className="btn-clear" onClick={onClearBeers} type="button">
+              <button
+                className="btn-clear"
+                onClick={onClearBeers}
+                type="button"
+              >
                 <Trash2 size={16} />
                 <span>Limpar</span>
               </button>
@@ -224,7 +234,7 @@ ${formattedItems}
                 >
                   <div className="beer-item-details">
                     <div className="beer-title-row">
-                      <span className="beer-name">{beer.name}</span>
+                      <span className="beer-name">{`${beer.name}`}</span>
                       {isCheapest && (
                         <span className="badge cheapest-badge">Campeã 🏆</span>
                       )}
@@ -236,7 +246,7 @@ ${formattedItems}
                       </span>
                       {!isCheapest && sortedBeers.length > 1 && (
                         <span className="diff-badge">
-                          {diffPercent.toFixed(0)}% + cara
+                          +{diffPercent.toFixed(0)}% mais cara
                         </span>
                       )}
                     </div>
@@ -444,14 +454,13 @@ ${formattedItems}
         .btn-share {
           display: flex;
           align-items: center;
-          gap: 4px;
           background: transparent;
           border: none;
           color: var(--primary);
           font-size: 0.85rem;
           font-weight: 600;
           cursor: pointer;
-          padding: 4px 8px;
+          padding: 4px 0px;
           border-radius: 6px;
           transition: background-color var(--transition-fast);
         }
@@ -470,7 +479,7 @@ ${formattedItems}
           font-size: 0.85rem;
           font-weight: 600;
           cursor: pointer;
-          padding: 4px 8px;
+          padding: 4px 2px;
           border-radius: 6px;
           transition: background-color var(--transition-fast);
         }
