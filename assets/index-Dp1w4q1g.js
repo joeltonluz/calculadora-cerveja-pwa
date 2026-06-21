@@ -154,7 +154,7 @@ ${y.map((e,t)=>{let n=t===0?`🥇`:`🍺`,r=(e.pricePerLiter-y[0].pricePerLiter)
 👉 https://joeltonluz.github.io/calcula-breja/
 
 💬 Promoção de Cerveja no WhatsApp (Varginha):
-👉 https://chat.whatsapp.com/HzgGW1xdWByHnbGkHHKRDn?mode=gi_t`;navigator.share?navigator.share({title:`CalculaBreja`,text:e}).catch(e=>console.log(`Erro ao compartilhar:`,e)):(navigator.clipboard.writeText(e),m(!0),setTimeout(()=>m(!1),2e3))},g=[190,300,330,350,355,473,600,1e3],v=e=>{if(e.preventDefault(),!l||!d)return;let n=parseFloat(l),r=parseFloat(d);n>0&&r>0&&(t({id:Date.now().toString(),name:s.trim()||`Cerveja`,volume:n,price:r,pricePerLiter:r/(n/1e3)}),c(``),u(``),f(``))},y=(0,_.useMemo)(()=>[...e].sort((e,t)=>e.pricePerLiter-t.pricePerLiter),[e]);return(0,b.jsxs)(`div`,{className:`home-container`,children:[(0,b.jsxs)(`header`,{className:`navbar glass-panel`,children:[(0,b.jsxs)(`div`,{className:`nav-brand`,children:[(0,b.jsx)(`span`,{className:`beer-emoji`,children:`🍻`}),(0,b.jsx)(`h1`,{children:`CalculaBreja`})]}),(0,b.jsxs)(`div`,{className:`nav-actions`,children:[(0,b.jsx)(`button`,{className:`btn-theme`,onClick:a,"aria-label":`Alternar tema`,children:i?(0,b.jsx)(me,{size:20}):(0,b.jsx)(E,{size:20})}),(0,b.jsxs)(`button`,{className:`btn-donation-trigger`,onClick:o,title:`Doe uma cerveja`,children:[(0,b.jsx)(T,{size:20,fill:`currentColor`}),(0,b.jsx)(`span`,{children:`Apoiar`})]})]})]}),(0,b.jsx)(`section`,{className:`form-section glass-panel`,children:(0,b.jsxs)(`form`,{onSubmit:v,className:`beer-form`,children:[(0,b.jsxs)(`div`,{className:`input-group`,children:[(0,b.jsxs)(`label`,{htmlFor:`beer-name`,children:[`Nome / Marca `,(0,b.jsx)(`span`,{className:`optional`,children:`(Opcional)`})]}),(0,b.jsx)(`input`,{type:`text`,id:`beer-name`,placeholder:`Ex: Heineken, Brahma...`,value:s,onChange:e=>c(e.target.value),className:`custom-input`})]}),(0,b.jsxs)(`div`,{className:`input-row`,children:[(0,b.jsxs)(`div`,{className:`input-group flex-1`,children:[(0,b.jsx)(`label`,{htmlFor:`beer-volume`,children:`Volume (ml)`}),(0,b.jsx)(`input`,{type:`number`,id:`beer-volume`,placeholder:`Ex: 350, 473`,value:l,onChange:e=>u(e.target.value),required:!0,min:`1`,className:`custom-input`})]}),(0,b.jsxs)(`div`,{className:`input-group flex-1`,children:[(0,b.jsx)(`label`,{htmlFor:`beer-price`,children:`Preço (R$)`}),(0,b.jsx)(`input`,{type:`number`,id:`beer-price`,placeholder:`Ex: 4.50`,value:d,onChange:e=>f(e.target.value),required:!0,min:`0.01`,step:`0.01`,className:`custom-input`})]})]}),(0,b.jsx)(`div`,{className:`quick-volumes`,children:g.map(e=>(0,b.jsxs)(`button`,{type:`button`,className:`btn-quick-vol`,onClick:()=>u(e.toString()),children:[e,` ml`]},e))}),(0,b.jsxs)(`button`,{type:`submit`,className:`btn-primary w-full mt-4`,children:[(0,b.jsx)(de,{size:20}),(0,b.jsx)(`span`,{children:`Adicionar à Comparação`})]})]})}),(0,b.jsxs)(`section`,{className:`list-section`,children:[(0,b.jsxs)(`div`,{className:`list-header`,children:[(0,b.jsx)(`h2`,{children:`Lista de Comparação`}),e.length>0&&(0,b.jsxs)(`div`,{className:`list-header-actions`,children:[(0,b.jsxs)(`button`,{className:`btn-share`,onClick:h,type:`button`,children:[(0,b.jsx)(fe,{size:16}),(0,b.jsx)(`span`,{})]}),(0,b.jsxs)(`button`,{className:`btn-clear`,onClick:n,type:`button`,children:[(0,b.jsx)(D,{size:16}),(0,b.jsx)(`span`,{children:`Limpar`})]})]})]}),y.length===0?(0,b.jsxs)(`div`,{className:`empty-state glass-panel`,children:[(0,b.jsx)(pe,{className:`empty-icon`,size:48}),(0,b.jsx)(`p`,{children:`Nenhuma cerveja adicionada.`}),(0,b.jsx)(`p`,{className:`subtext`,children:`Insira o volume e o preço acima para começar a comparar.`})]}):(0,b.jsx)(`div`,{className:`beers-list`,children:y.map((e,t)=>{let n=t===0;t===y.length-1&&y.length;let i=n?0:(e.pricePerLiter-y[0].pricePerLiter)/y[0].pricePerLiter*100;return(0,b.jsxs)(`div`,{className:`beer-item glass-panel ${n?`cheapest`:``}`,children:[(0,b.jsxs)(`div`,{className:`beer-item-details`,children:[(0,b.jsxs)(`div`,{className:`beer-title-row`,children:[(0,b.jsx)(`span`,{className:`beer-name`,children:`${e.name}`}),n&&(0,b.jsx)(`span`,{className:`badge cheapest-badge`,children:`Campeã 🏆`})]}),(0,b.jsxs)(`div`,{className:`beer-numbers`,children:[(0,b.jsxs)(`span`,{children:[e.volume,` ml • R$ `,e.price.toFixed(2)]}),!n&&y.length>1&&(0,b.jsxs)(`span`,{className:`diff-badge`,children:[`+`,i.toFixed(0),`% mais cara`]})]})]}),(0,b.jsxs)(`div`,{className:`beer-item-price-col`,children:[(0,b.jsxs)(`div`,{className:`price-per-liter`,children:[`R$ `,e.pricePerLiter.toFixed(2),(0,b.jsx)(`span`,{className:`unit`,children:`/L`})]}),(0,b.jsx)(`button`,{className:`btn-delete`,onClick:()=>r(e.id),"aria-label":`Excluir ${e.name}`,children:(0,b.jsx)(D,{size:18})})]})]},e.id)})})]}),(0,b.jsx)(`style`,{children:`
+👉 https://chat.whatsapp.com/HzgGW1xdWByHnbGkHHKRDn?mode=gi_t`;navigator.share?navigator.share({title:`CalculaBreja`,text:e}).catch(e=>console.log(`Erro ao compartilhar:`,e)):(navigator.clipboard.writeText(e),m(!0),setTimeout(()=>m(!1),2e3))},g=[190,300,330,350,355,473,600,1e3],v=e=>{if(e.preventDefault(),!l||!d)return;let n=parseFloat(l),r=parseFloat(d);n>0&&r>0&&(t({id:Date.now().toString(),name:s.trim()||`Cerveja`,volume:n,price:r,pricePerLiter:r/(n/1e3)}),c(``),u(``),f(``))},y=(0,_.useMemo)(()=>[...e].sort((e,t)=>e.pricePerLiter-t.pricePerLiter),[e]);return(0,b.jsxs)(`div`,{className:`home-container`,children:[(0,b.jsxs)(`header`,{className:`navbar glass-panel`,children:[(0,b.jsxs)(`div`,{className:`nav-brand`,children:[(0,b.jsx)(`span`,{className:`beer-emoji`,children:`🍻`}),(0,b.jsx)(`h1`,{children:`CalculaBreja`})]}),(0,b.jsxs)(`div`,{className:`nav-actions`,children:[(0,b.jsx)(`button`,{className:`btn-theme`,onClick:a,"aria-label":`Alternar tema`,children:i?(0,b.jsx)(me,{size:20}):(0,b.jsx)(E,{size:20})}),(0,b.jsxs)(`button`,{className:`btn-donation-trigger`,onClick:o,title:`Doe uma cerveja`,children:[(0,b.jsx)(T,{size:20,fill:`currentColor`}),(0,b.jsx)(`span`,{children:`Doar`})]})]})]}),(0,b.jsx)(`section`,{className:`form-section glass-panel`,children:(0,b.jsxs)(`form`,{onSubmit:v,className:`beer-form`,children:[(0,b.jsxs)(`div`,{className:`input-group`,children:[(0,b.jsxs)(`label`,{htmlFor:`beer-name`,children:[`Nome / Marca `,(0,b.jsx)(`span`,{className:`optional`,children:`(Opcional)`})]}),(0,b.jsx)(`input`,{type:`text`,id:`beer-name`,placeholder:`Ex: Heineken, Brahma...`,value:s,onChange:e=>c(e.target.value),className:`custom-input`})]}),(0,b.jsxs)(`div`,{className:`input-row`,children:[(0,b.jsxs)(`div`,{className:`input-group flex-1`,children:[(0,b.jsx)(`label`,{htmlFor:`beer-volume`,children:`Volume (ml)`}),(0,b.jsx)(`input`,{type:`number`,id:`beer-volume`,placeholder:`Ex: 350, 473`,value:l,onChange:e=>u(e.target.value),required:!0,min:`1`,className:`custom-input`})]}),(0,b.jsxs)(`div`,{className:`input-group flex-1`,children:[(0,b.jsx)(`label`,{htmlFor:`beer-price`,children:`Preço (R$)`}),(0,b.jsx)(`input`,{type:`number`,id:`beer-price`,placeholder:`Ex: 4.50`,value:d,onChange:e=>f(e.target.value),required:!0,min:`0.01`,step:`0.01`,className:`custom-input`})]})]}),(0,b.jsx)(`div`,{className:`quick-volumes`,children:g.map(e=>(0,b.jsxs)(`button`,{type:`button`,className:`btn-quick-vol`,onClick:()=>u(e.toString()),children:[e,` ml`]},e))}),(0,b.jsxs)(`button`,{type:`submit`,className:`btn-primary w-full mt-4`,children:[(0,b.jsx)(de,{size:20}),(0,b.jsx)(`span`,{children:`Adicionar à Comparação`})]})]})}),(0,b.jsxs)(`section`,{className:`list-section`,children:[(0,b.jsxs)(`div`,{className:`list-header`,children:[(0,b.jsx)(`h2`,{children:`Lista de Comparação`}),e.length>0&&(0,b.jsxs)(`div`,{className:`list-header-actions`,children:[(0,b.jsxs)(`button`,{className:`btn-share`,onClick:h,type:`button`,children:[(0,b.jsx)(fe,{size:16}),(0,b.jsx)(`span`,{})]}),(0,b.jsxs)(`button`,{className:`btn-clear`,onClick:n,type:`button`,children:[(0,b.jsx)(D,{size:16}),(0,b.jsx)(`span`,{children:`Limpar`})]})]})]}),y.length===0?(0,b.jsxs)(`div`,{className:`empty-state glass-panel`,children:[(0,b.jsx)(pe,{className:`empty-icon`,size:48}),(0,b.jsx)(`p`,{children:`Nenhuma cerveja adicionada.`}),(0,b.jsx)(`p`,{className:`subtext`,children:`Insira o volume e o preço acima para começar a comparar.`})]}):(0,b.jsx)(`div`,{className:`beers-list`,children:y.map((e,t)=>{let n=t===0;t===y.length-1&&y.length;let i=n?0:(e.pricePerLiter-y[0].pricePerLiter)/y[0].pricePerLiter*100;return(0,b.jsxs)(`div`,{className:`beer-item glass-panel ${n?`cheapest`:``}`,children:[(0,b.jsxs)(`div`,{className:`beer-item-details`,children:[(0,b.jsxs)(`div`,{className:`beer-title-row`,children:[(0,b.jsx)(`span`,{className:`beer-name`,children:`${e.name}`}),n&&(0,b.jsx)(`span`,{className:`badge cheapest-badge`,children:`Campeã 🏆`})]}),(0,b.jsxs)(`div`,{className:`beer-numbers`,children:[(0,b.jsxs)(`span`,{children:[e.volume,` ml • R$ `,e.price.toFixed(2)]}),!n&&y.length>1&&(0,b.jsxs)(`span`,{className:`diff-badge`,children:[`+`,i.toFixed(0),`% mais cara`]})]})]}),(0,b.jsxs)(`div`,{className:`beer-item-price-col`,children:[(0,b.jsxs)(`div`,{className:`price-per-liter`,children:[`R$ `,e.pricePerLiter.toFixed(2),(0,b.jsx)(`span`,{className:`unit`,children:`/L`})]}),(0,b.jsx)(`button`,{className:`btn-delete`,onClick:()=>r(e.id),"aria-label":`Excluir ${e.name}`,children:(0,b.jsx)(D,{size:18})})]})]},e.id)})})]}),(0,b.jsx)(`style`,{children:`
         .home-container {
           max-width: 600px;
           margin: 0 auto;
@@ -219,11 +219,11 @@ ${y.map((e,t)=>{let n=t===0?`🥇`:`🍺`,r=(e.pricePerLiter-y[0].pricePerLiter)
         .btn-donation-trigger {
           display: flex;
           align-items: center;
-          gap: 6px;
-          background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+          gap: 4px;
+          background: linear-gradient(135deg, #df880e 0%, #dc2626 100%);
           color: #ffffff;
           border: none;
-          padding: 8px 14px;
+          padding: 8px 12px;
           border-radius: 12px;
           font-family: var(--font-heading);
           font-weight: 600;
@@ -438,8 +438,8 @@ ${y.map((e,t)=>{let n=t===0?`🥇`:`🍺`,r=(e.pricePerLiter-y[0].pricePerLiter)
         }
 
         .cheapest-badge {
-          background-color: var(--accent);
-          color: #ffffff;
+          background-color: var(--accent-light);
+          color: var(--accent);
         }
 
         .beer-numbers {
@@ -534,7 +534,7 @@ ${y.map((e,t)=>{let n=t===0?`🥇`:`🍺`,r=(e.pricePerLiter-y[0].pricePerLiter)
             margin-top: 2px;
           }
         }
-      `})]})}function he({onBack:e}){let[t,n]=(0,_.useState)(!1),r=`doacao@calculabreja.com.br`;return(0,b.jsxs)(`div`,{className:`donation-container glass-panel`,children:[(0,b.jsxs)(`header`,{className:`donation-header`,children:[(0,b.jsx)(`button`,{className:`btn-icon`,onClick:e,"aria-label":`Voltar para calculadora`,children:(0,b.jsx)(se,{size:24})}),(0,b.jsx)(`h2`,{children:`Doe uma Cerveja`})]}),(0,b.jsxs)(`main`,{className:`donation-body`,children:[(0,b.jsxs)(`div`,{className:`heart-beer-icon`,children:[(0,b.jsx)(ce,{size:40,className:`beer-glow`}),(0,b.jsx)(T,{size:20,className:`heart-float`})]}),(0,b.jsx)(`h3`,{children:`Pague uma rodada! 🍻`}),(0,b.jsxs)(`p`,{className:`motivation-text`,children:[`Se a `,(0,b.jsx)(`strong`,{children:`CalculaBreja`}),` te ajudou a economizar no churrasco ou no bar, que tal apoiar o desenvolvedor pagando uma rodada de cerveja?`]}),(0,b.jsx)(`div`,{className:`qr-container`,children:(0,b.jsxs)(`svg`,{className:`pix-qr-svg`,viewBox:`0 0 200 200`,width:`180`,height:`180`,children:[(0,b.jsx)(`rect`,{width:`200`,height:`200`,rx:`16`,fill:`#ffffff`}),(0,b.jsx)(`rect`,{x:`20`,y:`20`,width:`40`,height:`40`,fill:`#1c1917`}),(0,b.jsx)(`rect`,{x:`25`,y:`25`,width:`30`,height:`30`,fill:`#ffffff`}),(0,b.jsx)(`rect`,{x:`30`,y:`30`,width:`20`,height:`20`,fill:`#1c1917`}),(0,b.jsx)(`rect`,{x:`140`,y:`20`,width:`40`,height:`40`,fill:`#1c1917`}),(0,b.jsx)(`rect`,{x:`145`,y:`25`,width:`30`,height:`30`,fill:`#ffffff`}),(0,b.jsx)(`rect`,{x:`150`,y:`30`,width:`20`,height:`20`,fill:`#1c1917`}),(0,b.jsx)(`rect`,{x:`20`,y:`140`,width:`40`,height:`40`,fill:`#1c1917`}),(0,b.jsx)(`rect`,{x:`25`,y:`145`,width:`30`,height:`30`,fill:`#ffffff`}),(0,b.jsx)(`rect`,{x:`30`,y:`150`,width:`20`,height:`20`,fill:`#1c1917`}),(0,b.jsx)(`rect`,{x:`75`,y:`20`,width:`10`,height:`20`,fill:`#1c1917`}),(0,b.jsx)(`rect`,{x:`90`,y:`35`,width:`15`,height:`10`,fill:`#1c1917`}),(0,b.jsx)(`rect`,{x:`110`,y:`20`,width:`20`,height:`15`,fill:`#1c1917`}),(0,b.jsx)(`rect`,{x:`75`,y:`50`,width:`10`,height:`10`,fill:`#1c1917`}),(0,b.jsx)(`rect`,{x:`95`,y:`55`,width:`25`,height:`15`,fill:`#1c1917`}),(0,b.jsx)(`rect`,{x:`20`,y:`75`,width:`20`,height:`10`,fill:`#1c1917`}),(0,b.jsx)(`rect`,{x:`35`,y:`90`,width:`15`,height:`20`,fill:`#1c1917`}),(0,b.jsx)(`rect`,{x:`20`,y:`120`,width:`10`,height:`10`,fill:`#1c1917`}),(0,b.jsx)(`rect`,{x:`140`,y:`75`,width:`15`,height:`15`,fill:`#1c1917`}),(0,b.jsx)(`rect`,{x:`165`,y:`80`,width:`15`,height:`10`,fill:`#1c1917`}),(0,b.jsx)(`rect`,{x:`140`,y:`100`,width:`20`,height:`10`,fill:`#1c1917`}),(0,b.jsx)(`rect`,{x:`150`,y:`120`,width:`10`,height:`15`,fill:`#1c1917`}),(0,b.jsx)(`rect`,{x:`75`,y:`140`,width:`20`,height:`10`,fill:`#1c1917`}),(0,b.jsx)(`rect`,{x:`80`,y:`155`,width:`15`,height:`25`,fill:`#1c1917`}),(0,b.jsx)(`rect`,{x:`110`,y:`140`,width:`10`,height:`15`,fill:`#1c1917`}),(0,b.jsx)(`rect`,{x:`105`,y:`165`,width:`20`,height:`15`,fill:`#1c1917`}),(0,b.jsx)(`rect`,{x:`140`,y:`145`,width:`10`,height:`10`,fill:`#1c1917`}),(0,b.jsx)(`rect`,{x:`160`,y:`150`,width:`20`,height:`10`,fill:`#1c1917`}),(0,b.jsx)(`rect`,{x:`150`,y:`170`,width:`15`,height:`10`,fill:`#1c1917`}),(0,b.jsx)(`circle`,{cx:`100`,cy:`100`,r:`22`,fill:`#ffffff`}),(0,b.jsx)(`circle`,{cx:`100`,cy:`100`,r:`18`,fill:`#77cca4`}),(0,b.jsx)(`path`,{d:`M93 94 L100 87 L107 94 L100 101 Z`,fill:`#326e5d`}),(0,b.jsx)(`path`,{d:`M93 106 L100 99 L107 106 L100 113 Z`,fill:`#326e5d`})]})}),(0,b.jsxs)(`div`,{className:`pix-id-box`,children:[(0,b.jsx)(`span`,{className:`pix-label`,children:`Chave Pix`}),(0,b.jsxs)(`div`,{className:`pix-input-wrapper`,children:[(0,b.jsx)(`input`,{type:`text`,readOnly:!0,value:r,className:`pix-key-input`}),(0,b.jsxs)(`button`,{className:`btn-copy ${t?`copied`:``}`,onClick:()=>{navigator.clipboard.writeText(r),n(!0),setTimeout(()=>n(!1),2e3)},children:[t?(0,b.jsx)(le,{size:18}):(0,b.jsx)(ue,{size:18}),(0,b.jsx)(`span`,{children:t?`Copiado!`:`Copiar`})]})]})]}),(0,b.jsxs)(`div`,{className:`developer-box`,children:[(0,b.jsx)(`span`,{className:`pix-label`,children:`Desenvolvedor`}),(0,b.jsxs)(`div`,{className:`dev-card`,children:[(0,b.jsx)(`span`,{className:`dev-name`,children:`Joelton Lino Luz`}),(0,b.jsxs)(`a`,{href:`https://www.linkedin.com/in/joeltonluz`,target:`_blank`,rel:`noopener noreferrer`,className:`btn-linkedin`,children:[(0,b.jsx)(`svg`,{viewBox:`0 0 24 24`,width:`18`,height:`18`,fill:`currentColor`,children:(0,b.jsx)(`path`,{d:`M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z`})}),(0,b.jsx)(`span`,{children:`LinkedIn`})]})]})]})]}),(0,b.jsx)(`style`,{children:`
+      `})]})}function he({onBack:e}){let[t,n]=(0,_.useState)(!1),r=`00020101021126580014br.gov.bcb.pix0136d5c8a37d-77c7-49e0-8925-694adcd79cf35204000053039865802BR5916JOELTON LINO LUZ6008VARGINHA62070503***63040D6C`;return(0,b.jsxs)(`div`,{className:`donation-container glass-panel`,children:[(0,b.jsxs)(`header`,{className:`donation-header`,children:[(0,b.jsx)(`button`,{className:`btn-icon`,onClick:e,"aria-label":`Voltar para calculadora`,children:(0,b.jsx)(se,{size:24})}),(0,b.jsx)(`h2`,{children:`Doe uma Cerveja`})]}),(0,b.jsxs)(`main`,{className:`donation-body`,children:[(0,b.jsxs)(`div`,{className:`heart-beer-icon`,children:[(0,b.jsx)(ce,{size:40,className:`beer-glow`}),(0,b.jsx)(T,{size:20,className:`heart-float`})]}),(0,b.jsx)(`h3`,{children:`🍻 Pague uma rodada! 🍻`}),(0,b.jsxs)(`p`,{className:`motivation-text`,children:[`Se a `,(0,b.jsx)(`strong`,{children:`CalculaBreja`}),` te ajudou a economizar uma grana 🤑, apoie o desenvolvedor pagando uma cerveja?`]}),(0,b.jsx)(`div`,{className:`qr-container`,children:(0,b.jsx)(`img`,{src:`./qr-code.png`,alt:`QR Code Pix`,className:`pix-qr-img`,width:`180`,height:`180`})}),(0,b.jsxs)(`div`,{className:`pix-id-box`,children:[(0,b.jsx)(`span`,{className:`pix-label`,children:`Chave Pix`}),(0,b.jsxs)(`div`,{className:`pix-input-wrapper`,children:[(0,b.jsx)(`input`,{type:`text`,readOnly:!0,value:r,className:`pix-key-input`}),(0,b.jsxs)(`button`,{className:`btn-copy ${t?`copied`:``}`,onClick:()=>{navigator.clipboard.writeText(r),n(!0),setTimeout(()=>n(!1),2e3)},children:[t?(0,b.jsx)(le,{size:18}):(0,b.jsx)(ue,{size:18}),(0,b.jsx)(`span`,{children:t?`Copiado!`:`Copiar`})]})]})]}),(0,b.jsxs)(`div`,{className:`community-box`,children:[(0,b.jsx)(`span`,{className:`pix-label`,children:`Comunidade`}),(0,b.jsxs)(`a`,{href:`https://chat.whatsapp.com/HzgGW1xdWByHnbGkHHKRDn`,target:`_blank`,rel:`noopener noreferrer`,className:`whatsapp-card`,children:[(0,b.jsxs)(`div`,{className:`whatsapp-info`,children:[(0,b.jsx)(`svg`,{className:`whatsapp-icon`,viewBox:`0 0 24 24`,width:`24`,height:`24`,fill:`currentColor`,children:(0,b.jsx)(`path`,{d:`M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.457L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.864-9.799.002-2.63-1.023-5.101-2.885-6.966a9.9 9.9 0 0 0-6.98-2.879c-5.443 0-9.87 4.37-9.874 9.8-.001 2.02.535 3.997 1.549 5.728L1.9 21.087l4.747-1.933zm11.399-6.84c-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.15-.174.2-.298.3-.496.099-.198.05-.372-.025-.521-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414-.074-.124-.272-.198-.57-.347z`})}),(0,b.jsxs)(`div`,{children:[(0,b.jsx)(`h4`,{children:`PromoBreja (Varginha)`}),(0,b.jsx)(`p`,{children:`Cerveja e Carne em Promoção!`})]})]}),(0,b.jsx)(`span`,{className:`btn-join`,children:`Entrar`})]})]}),(0,b.jsxs)(`div`,{className:`developer-box`,children:[(0,b.jsx)(`span`,{className:`pix-label`,children:`Desenvolvedor`}),(0,b.jsxs)(`a`,{href:`https://www.linkedin.com/in/joeltonluz`,target:`_blank`,rel:`noopener noreferrer`,className:`linkedin-card`,children:[(0,b.jsxs)(`div`,{className:`linkedin-info`,children:[(0,b.jsx)(`svg`,{className:`linkedin-icon`,viewBox:`0 0 24 24`,width:`22`,height:`22`,fill:`currentColor`,children:(0,b.jsx)(`path`,{d:`M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z`})}),(0,b.jsxs)(`div`,{children:[(0,b.jsx)(`h4`,{children:`LinkedIn`}),(0,b.jsx)(`p`,{children:`Conecte-se e mande um feedback!`})]})]}),(0,b.jsx)(`span`,{className:`btn-connect`,children:`Conectar`})]})]})]}),(0,b.jsx)(`style`,{children:`
         .donation-container {
           padding: 24px;
           max-width: 480px;
@@ -621,8 +621,10 @@ ${y.map((e,t)=>{let n=t===0?`🥇`:`🍺`,r=(e.pricePerLiter-y[0].pricePerLiter)
           justify-content: center;
         }
 
-        .pix-qr-svg {
+        .pix-qr-img {
           display: block;
+          max-width: 100%;
+          height: auto;
         }
 
         .pix-id-box {
@@ -685,49 +687,135 @@ ${y.map((e,t)=>{let n=t===0?`🥇`:`🍺`,r=(e.pricePerLiter-y[0].pricePerLiter)
           background-color: var(--accent);
         }
 
-        .developer-box {
+        .community-box {
           width: 100%;
           text-align: left;
           margin-top: 24px;
         }
 
-        .dev-card {
+        .whatsapp-card {
           display: flex;
           align-items: center;
           justify-content: space-between;
           padding: 14px 18px;
-          border: 1px solid var(--border);
+          border: 1px solid rgba(37, 211, 102, 0.2);
           border-radius: 12px;
           background-color: var(--bg-primary);
           gap: 12px;
-          flex-wrap: wrap;
+          text-decoration: none;
+          transition: all var(--transition-fast) ease-out;
         }
 
-        .dev-name {
+        .whatsapp-card:hover {
+          border-color: rgba(37, 211, 102, 0.5);
+          background-color: rgba(37, 211, 102, 0.05);
+          transform: translateY(-1px);
+        }
+
+        .whatsapp-info {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          text-align: left;
+        }
+
+        .whatsapp-icon {
+          color: #25D366;
+          flex-shrink: 0;
+        }
+
+        .whatsapp-info h4 {
+          margin: 0 0 2px 0;
+          font-size: 0.95rem;
+          color: var(--text-primary);
           font-family: var(--font-heading);
           font-weight: 600;
-          font-size: 1rem;
-          color: var(--text-primary);
         }
 
-        .btn-linkedin {
-          display: inline-flex;
-          align-items: center;
-          gap: 8px;
-          background-color: #0077b5;
+        .whatsapp-info p {
+          margin: 0;
+          font-size: 0.8rem;
+          color: var(--text-secondary);
+        }
+
+        .btn-join {
+          background-color: #25D366;
           color: #ffffff;
-          border: none;
-          padding: 8px 14px;
+          padding: 6px 12px;
           border-radius: 8px;
           font-family: var(--font-heading);
           font-weight: 600;
-          font-size: 0.85rem;
-          text-decoration: none;
-          transition: background-color var(--transition-fast), transform var(--transition-fast);
+          font-size: 0.8rem;
+          transition: background-color var(--transition-fast);
         }
 
-        .btn-linkedin:hover {
-          background-color: #005582;
+        .whatsapp-card:hover .btn-join {
+          background-color: #20ba5a;
+        }
+
+        .developer-box {
+          width: 100%;
+          text-align: left;
+          margin-top: 16px;
+        }
+
+        .linkedin-card {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 14px 18px;
+          border: 1px solid rgba(0, 119, 181, 0.2);
+          border-radius: 12px;
+          background-color: var(--bg-primary);
+          gap: 12px;
+          text-decoration: none;
+          transition: all var(--transition-fast) ease-out;
+        }
+
+        .linkedin-card:hover {
+          border-color: rgba(0, 119, 181, 0.5);
+          background-color: rgba(0, 119, 181, 0.05);
           transform: translateY(-1px);
+        }
+
+        .linkedin-info {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          text-align: left;
+        }
+
+        .linkedin-icon {
+          color: #0077b5;
+          flex-shrink: 0;
+        }
+
+        .linkedin-info h4 {
+          margin: 0 0 2px 0;
+          font-size: 0.95rem;
+          color: var(--text-primary);
+          font-family: var(--font-heading);
+          font-weight: 600;
+        }
+
+        .linkedin-info p {
+          margin: 0;
+          font-size: 0.8rem;
+          color: var(--text-secondary);
+        }
+
+        .btn-connect {
+          background-color: #0077b5;
+          color: #ffffff;
+          padding: 6px 12px;
+          border-radius: 8px;
+          font-family: var(--font-heading);
+          font-weight: 600;
+          font-size: 0.8rem;
+          transition: background-color var(--transition-fast);
+        }
+
+        .linkedin-card:hover .btn-connect {
+          background-color: #005582;
         }
       `})]})}function ge(){let[e,t]=(0,_.useState)(`splash`),[n,r]=(0,_.useState)(()=>{let e=localStorage.getItem(`calculabreja_beers`);return e?JSON.parse(e):[]}),[i,a]=(0,_.useState)(()=>{let e=localStorage.getItem(`calculabreja_dark_mode`);return e===null?window.matchMedia(`(prefers-color-scheme: dark)`).matches:e===`true`});return(0,_.useEffect)(()=>{localStorage.setItem(`calculabreja_beers`,JSON.stringify(n))},[n]),(0,_.useEffect)(()=>{let e=document.documentElement.classList;i?e.add(`dark-theme`):e.remove(`dark-theme`),localStorage.setItem(`calculabreja_dark_mode`,i.toString())},[i]),(0,b.jsxs)(b.Fragment,{children:[e===`splash`&&(0,b.jsx)(x,{onFinish:()=>t(`home`)}),e===`home`&&(0,b.jsx)(O,{beers:n,onAddBeer:e=>{r(t=>[...t,e])},onClearBeers:()=>{window.confirm(`Deseja limpar toda a lista de comparação?`)&&r([])},onDeleteBeer:e=>{r(t=>t.filter(t=>t.id!==e))},darkMode:i,onToggleDarkMode:()=>{a(!i)},onGoToDonation:()=>t(`donation`)}),e===`donation`&&(0,b.jsx)(he,{onBack:()=>t(`home`)})]})}(0,v.createRoot)(document.getElementById(`root`)).render((0,b.jsx)(_.StrictMode,{children:(0,b.jsx)(ge,{})}));
